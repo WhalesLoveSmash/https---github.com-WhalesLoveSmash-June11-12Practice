@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-black text-white min-h-screen flex flex-col items-center justify-start py-8 px-4">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>👻 Ghost Kitchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ghost Kitchen</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-black text-white font-mono p-4">
-  <h1 class="text-4xl mb-2 tracking-wide">Ghost Kitchen</h1>
-  <p class="text-sm text-purple-300 mb-6">Where orders from the void echo forever</p>
+<body class="w-full max-w-3xl mx-auto flex flex-col items-center">
 
-  <form id="orderForm" class="mb-6 space-y-4 max-w-md">
+  <!-- Title with blinking ghost emoji -->
+  <h1 class="text-4xl md:text-6xl font-extrabold mb-8 flex items-center space-x-3 select-none">
+    <span>Ghost Kitchen</span>
+    <span class="blink text-4xl md:text-6xl">👻</span>
+  </h1>
+
+  <!-- Order form -->
+  <form id="order-form" class="w-full flex flex-col sm:flex-row gap-4 mb-6 px-4">
     <input
-      id="nameInput"
+      id="name"
+      name="name"
       type="text"
       placeholder="Name"
-      class="w-full p-2 rounded bg-gray-800 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
       required
+      class="flex-1 bg-transparent border border-purple-700 rounded px-4 py-2 text-white placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
     />
+
     <select
-      id="itemSelect"
-      class="w-full p-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+      id="item"
+      name="item"
+      required
+      class="flex-1 bg-transparent border border-purple-700 rounded px-4 py-2 text-white placeholder-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
     >
-      <option>🧠 PolterGeist Pizza</option>
-      <option>💨 Whailing Banshee Burger</option>
-      <option>🔪 The Haunted Chef</option>
+      <option value="" disabled selected>Select menu item</option>
+      <option value="💨 Whailing Banshee Burger">💨 Whailing Banshee Burger</option>
+      <option value="🔪 The Haunted Chef">🔪 The Haunted Chef</option>
+      <option value="🕸️ Spiderweb Fries">🕸️ Spiderweb Fries</option>
     </select>
+
     <button
       type="submit"
-      class="w-full bg-purple-700 hover:bg-purple-600 text-white py-2 rounded transition duration-200"
+      class="bg-purple-600 hover:bg-purple-700 transition rounded px-6 py-2 text-white font-semibold"
     >
-      Submit Order
+      Order
     </button>
   </form>
 
-  <div>
-    <h2 class="text-2xl mb-2">Recent Orders</h2>
-    <ul id="orderList" class="space-y-2"></ul>
-  </div>
+  <!-- Orders list -->
+  <ul id="orders" class="w-full px-4 space-y-3 max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-purple-900">
+    <!-- Orders will be injected here -->
+  </ul>
 
   <script src="script.js"></script>
 </body>
