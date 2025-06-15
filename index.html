@@ -2,18 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>👻Ghost Kitchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>👻 Ghost Kitchen</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  
-  <h1>Spooky</h1>
+<body class="bg-gray-900 text-purple-200 min-h-screen flex flex-col items-center p-6 font-mono">
 
-  <button onclick="sendFakeOrder()" class="bg-purple-600 text-white px-4 py-2 mt-4 rounded">
+  <h1 class="text-4xl font-bold mb-6 select-none">Spooky Ghost Kitchen</h1>
+
+  <button
+    onclick="promptAndSendOrder()"
+    class="bg-purple-700 hover:bg-purple-800 transition px-5 py-3 rounded shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+  >
     Order Whailing Banshee Burger
   </button>
-  
+
+  <section
+    id="orderBoard"
+    class="mt-10 w-full max-w-md min-h-[8rem] rounded border border-purple-700 p-4 bg-gradient-to-tr from-purple-900/40 to-purple-800/20 shadow-lg
+           animate-pulse-slow"
+  >
+    <!-- Orders will appear here -->
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>

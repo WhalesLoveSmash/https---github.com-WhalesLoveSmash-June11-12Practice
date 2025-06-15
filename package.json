@@ -1,17 +1,25 @@
 {
   "name": "ghost-kitchen",
   "version": "1.0.0",
-  "description": "Welcome to **Ghost Kitchen**, a haunted fake restaurant where you can’t eat anything but can definitely get jump scared by how good the code structure is.",
+  "description": "👻 Ghost Kitchen — a haunted fake restaurant where the code is scary good and orders come alive.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests yet, ghosts only.\" && exit 0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/WhalesLoveSmash/June11-12Practice.git"
   },
-  "keywords": [],
+  "keywords": [
+    "ghost",
+    "restaurant",
+    "haunted",
+    "nodejs",
+    "express",
+    "fullstack",
+    "spooky"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
