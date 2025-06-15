@@ -2,6 +2,8 @@
 
 Welcome to **Ghost Kitchen**, a haunted fake restaurant where you can’t eat anything but can definitely get jump scared by how good the code structure is.
 
+Frontend JS → sends data → Backend server → logs it + sends confirmation → Frontend shows success
+
 Specials include:  
 - 🧠 *PolterGeist Pizza*  
 - 💨 *Whailing Banshee Burger*  
