@@ -23,7 +23,7 @@ It uses **Tailwind via CDN** and plain JavaScript — no React, no bundlers.
 
 ---
 
-## ✨ MVP Features (complete)
+## ✨ MVP Features
 
 - Dynamic menu powered by JSON (no hardcoded items)  
 - Spooky theme + ghost-based specials  
