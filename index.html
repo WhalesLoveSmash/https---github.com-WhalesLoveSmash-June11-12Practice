@@ -6,35 +6,37 @@
   <title>👻 Ghost Kitchen</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-6">
-  
-  <h1 class="text-4xl font-bold mb-6">Spooky 👻 Ghost Kitchen</h1>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col items-center p-6 font-mono">
 
-  <form id="orderForm" class="flex flex-col sm:flex-row gap-4 mb-8 w-full max-w-xl">
+  <h1 class="text-5xl font-extrabold mb-6 text-purple-300 drop-shadow-md animate-pulse">
+    👻 Ghost Kitchen
+  </h1>
+
+  <form id="orderForm" class="flex flex-col sm:flex-row gap-4 mb-10 w-full max-w-2xl">
     <input
       id="nameInput"
       type="text"
-      placeholder="Your name"
+      placeholder="ghost name (e.g. 'Lil Wraith')"
       required
-      class="flex-grow p-3 rounded bg-gray-800 text-white placeholder-gray-400"
+      class="flex-grow p-3 rounded bg-gray-800 text-white placeholder-purple-400 shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
     />
-    <select id="itemSelect" required class="p-3 rounded bg-gray-800 text-white">
-      <option value="" disabled selected>Choose your spooky order</option>
+    <select id="itemSelect" required class="p-3 rounded bg-gray-800 text-white shadow-md">
+      <option value="" disabled selected>Choose your cursed meal</option>
       <option value="PolterGeist Pizza">🧠 PolterGeist Pizza</option>
       <option value="Whailing Banshee Burger">💨 Whailing Banshee Burger</option>
       <option value="The Haunted Chef">🔪 The Haunted Chef</option>
     </select>
     <button
       type="submit"
-      class="bg-purple-700 hover:bg-purple-900 transition text-white font-semibold px-6 py-3 rounded"
+      class="bg-purple-700 hover:bg-purple-900 transition-all text-white font-semibold px-6 py-3 rounded shadow-md active:scale-95"
     >
-      Order Now
+      Summon Meal
     </button>
   </form>
 
-  <section class="w-full max-w-xl">
-    <h2 class="text-2xl mb-4 font-semibold">Recent Orders</h2>
-    <ul id="ordersList" class="space-y-4 max-h-96 overflow-y-auto">
+  <section class="w-full max-w-2xl">
+    <h2 class="text-2xl mb-4 font-semibold text-purple-300 tracking-wide">👁️ Recent Manifestations</h2>
+    <ul id="ordersList" class="space-y-4 max-h-96 overflow-y-auto p-1 pr-2 scrollbar-thin scrollbar-thumb-purple-600">
       <!-- orders appear here -->
     </ul>
   </section>

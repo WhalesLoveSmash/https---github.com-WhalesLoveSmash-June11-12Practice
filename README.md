@@ -1,74 +1,83 @@
 # 👻 Ghost Kitchen
 
-Welcome to **Ghost Kitchen**, a haunted fake restaurant where you can’t eat anything but can definitely get jump scared by how good the code structure is.
+**Ghost Kitchen** is a haunted multiplayer fake restaurant where you can't eat anything — but you *can* leave your cursed mark in real-time.
 
-Frontend JS → sends data → Backend server → logs it + sends confirmation → Frontend shows success
+Orders placed by one visitor are instantly visible to everyone else. It's spooky, stylish, and fully powered by a hand-written backend.
 
-Specials include:  
-- 🧠 *PolterGeist Pizza*  
-- 💨 *Whailing Banshee Burger*  
-- 🔪 *The Haunted Chef*
-
-This is **not** a real restaurant. It’s a solo-coded project built to learn fullstack web development with good vibes and spooky aesthetics.
+No frameworks. No copy-paste. Just handcrafted fullstack web dev with max vibes.
 
 ---
 
-## 🔥 What it actually is
+## 🧠 What This Actually Is
 
-A **JSON-powered**, mobile-first restaurant site built from scratch using:  
-- no frameworks  
-- no templates  
-- no code that isn’t fully understood
+A **Tailwind + Vanilla JS frontend** paired with a custom **Node.js/Express backend**, built entirely from scratch. Visitors can:
 
-Everything’s written by hand and deployed through **GitHub Pages**.  
-It uses **Tailwind via CDN** and plain JavaScript — no React, no bundlers.
-
----
-
-## ✨ MVP Features
-
-- Dynamic menu powered by JSON (no hardcoded items)  
-- Spooky theme + ghost-based specials  
-- Mobile-first layout with hamburger nav  
-- Fake order confirmation UI  
-- Auto dark mode (based on device theme)  
-- Instant GitHub Pages deploy on every push  
+- View an evolving order board updated in real time
+- Leave their name and select a ghost-themed menu item
+- Watch the interface come alive with haunted UI elements
+- Know something’s *going on* behind the scenes — a vibe that’s only possible with a backend
 
 ---
 
-## 🧠 Coming soon (backend phase)
+## ✨ Core Features
 
-- Node.js backend hosted on Replit or similar  
-- Custom API to accept and store orders  
-- Optional Stripe integration  
-- Optional email confirmations  
-- Potentially cursed meal tracking system 👁️  
+- **Live Orders Feed**  
+  Every order placed is visible to every user — with name, dish, and timestamp.
+
+- **Spooky Custom API**  
+  Built with Express + JSON file storage. No database, just vibes and hand-rolled endpoints.
+
+- **Mobile-First Design**  
+  The site is fully responsive and dark-mode native, so you can haunt it from anywhere.
+
+- **No Frameworks Allowed**  
+  Every line of code was written by hand. No React, no libraries, no generated boilerplate.
 
 ---
 
 ## 💾 Tech Stack
 
-| Layer     | Tech                              |  
-|-----------|----------------------------------|  
-| Frontend  | HTML + Tailwind (CDN) + Vanilla JS |  
-| Backend   | Node.js (planned)                |  
-| Hosting   | GitHub Pages (frontend), Replit API (backend) |  
+| Layer     | Stack                           |
+|-----------|----------------------------------|
+| Frontend  | HTML, Tailwind CSS (CDN), Vanilla JS |
+| Backend   | Node.js + Express + file-based JSON storage |
+| Hosting   | GitHub Pages (frontend), Replit or similar (backend) |
+
+---
+
+## 🧪 UX Philosophy
+
+This project isn’t about fake functionality or simulated databases —  
+it’s about making even non-coders *feel* the backend.
+
+You see real timestamps. Real names. Real data flowing.
+
+If you're not a dev, you'll still sense that something *more* is happening — and that's the point.
 
 ---
 
 ## 🚀 Deployment Plan
 
-- Frontend → GitHub Pages (auto-updates on commit)  
-- Backend → Replit (or Glitch, or another free host)  
+- Frontend → [GitHub Pages](https://pages.github.com/)  
+- Backend → Replit / Glitch / Fly.io / custom VPS  
+- API fully separated so backend can scale or evolve later
 
 ---
 
-## 🧪 Goal / Style / Vibe
+## 🪦 Future Enhancements (Maybe)
 
-This project is about **actually learning** — not just vibe coding.  
-Phase 1: Barebones frontend MVP (complete)  
-Phase 2: Backend core logic (in progress)  
-Phase 3: UI polish and style improvements (upcoming)  
+- “Ghost of the Day” recognition for most orders
+- Cursed bot orders that appear at 3:00 AM
+- Expiring orders that fade away like real ghosts
+- Haunted sound effects or subtle UI jumpscares
 
-No copy-pastes. Everything handtyped.  
-UI will get a glow-up later — right now it’s a working skeleton.
+---
+
+## 🛠 Dev Notes
+
+- Orders are stored in a flat JSON file (`orders.json`)  
+- POST to `/order` with `{ name, item }` to add an order  
+- GET `/orders` returns all orders, latest first  
+- Everything lives in clean files with no build step
+
+---

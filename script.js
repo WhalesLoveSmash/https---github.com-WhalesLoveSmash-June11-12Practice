@@ -3,9 +3,8 @@ const orderForm = document.getElementById('orderForm');
 const nameInput = document.getElementById('nameInput');
 const itemSelect = document.getElementById('itemSelect');
 
-const backendURL = 'http://localhost:3000'; // change this on deploy
+const backendURL = 'http://localhost:3000'; // update when deployed
 
-// Format timestamp to friendly local time
 function formatTime(isoString) {
   const d = new Date(isoString);
   return d.toLocaleString(undefined, {
@@ -14,42 +13,53 @@ function formatTime(isoString) {
   });
 }
 
-// Render all orders
 function renderOrders(orders) {
   ordersList.innerHTML = '';
+
   if (orders.length === 0) {
-    ordersList.innerHTML = '<li class="italic text-gray-500">No orders yet, be the first!</li>';
+    ordersList.innerHTML = `
+      <li class="italic text-gray-600 animate-pulse">no spirits have ordered yet...</li>
+    `;
     return;
   }
+
   for (const order of orders) {
     const li = document.createElement('li');
-    li.className = 'bg-gray-800 p-4 rounded shadow hover:bg-gray-700 transition cursor-default';
+    li.className = `
+      bg-gray-800 border border-purple-600 p-4 rounded-md shadow-lg
+      hover:bg-gray-700 transition-all duration-200
+    `;
+
     li.innerHTML = `
-      <p><span class="font-semibold">${order.name}</span> ordered <span class="italic">${order.item}</span></p>
+      <div class="flex justify-between items-center">
+        <span class="text-lg">${order.item}</span>
+        <span class="text-sm text-purple-400 italic">${order.name}</span>
+      </div>
       <p class="text-xs text-gray-400 mt-1">${formatTime(order.timestamp)}</p>
     `;
     ordersList.appendChild(li);
   }
 }
 
-// Fetch and refresh orders from backend
 async function fetchOrders() {
   try {
     const res = await fetch(`${backendURL}/orders`);
     const orders = await res.json();
     renderOrders(orders);
   } catch {
-    ordersList.innerHTML = '<li class="text-red-500">Failed to load orders :(</li>';
+    ordersList.innerHTML = `
+      <li class="text-red-500">👻 spirits failed to deliver the list</li>
+    `;
   }
 }
 
-// Handle order form submit
 orderForm.addEventListener('submit', async e => {
   e.preventDefault();
+
   const name = nameInput.value.trim();
   const item = itemSelect.value;
 
-  if (!name || !item) return alert('Please enter your name and select an item.');
+  if (!name || !item) return alert('Enter your ghost name and cursed dish.');
 
   try {
     const res = await fetch(`${backendURL}/order`, {
@@ -57,19 +67,20 @@ orderForm.addEventListener('submit', async e => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, item }),
     });
+
     const data = await res.json();
+
     if (res.ok) {
       nameInput.value = '';
       itemSelect.value = '';
-      fetchOrders(); // refresh orders live
-      alert(`Thanks ${data.order.name}, your order for ${data.order.item} is spooky and received!`);
+      fetchOrders();
+      alert(`🦴 Order from the void accepted, ${data.order.name} summoned ${data.order.item}`);
     } else {
-      alert(data.error || 'Failed to place order.');
+      alert(data.error || 'Ghost kitchen rejected your order.');
     }
   } catch {
-    alert('Error connecting to server.');
+    alert('Ghost servers unreachable. Try again later.');
   }
 });
 
-// Initial fetch on page load
 fetchOrders();
