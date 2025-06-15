@@ -1,48 +1,40 @@
-// backend.js
-
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// In-memory store for orders
-const orders = [];
+// Store orders in memory for demo (replace with DB for prod)
+let orders = [];
 
-app.get('/', (req, res) => {
-  res.send('👻 Welcome to Ghost Kitchen backend');
-});
-
-// GET endpoint to return all orders as JSON
+// Get all orders
 app.get('/orders', (req, res) => {
   res.json(orders);
 });
 
-// POST endpoint to receive new orders
+// Receive new order
 app.post('/order', (req, res) => {
-  const { name, item, quantity, timestamp } = req.body;
-
-  // Simple validation
-  if (!name || !item || !quantity) {
-    return res.status(400).json({ error: 'Missing order data' });
+  const { name, item } = req.body;
+  if (!name || !item) {
+    return res.status(400).json({ error: 'Name and item are required.' });
   }
 
-  // Push new order to in-memory array with timestamp fallback
-  orders.push({
+  const newOrder = {
+    id: Date.now(),
     name,
     item,
-    quantity,
-    timestamp: timestamp || new Date().toISOString(),
-  });
+    timestamp: new Date().toISOString()
+  };
+  orders.unshift(newOrder); // newest first
 
-  console.log(`New order from ${name}: ${quantity}x ${item}`);
+  // Limit orders to last 20 for UX balance
+  if (orders.length > 20) orders.pop();
 
-  res.status(200).json({ message: 'Order received' });
+  res.json({ message: 'Order received', order: newOrder });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+  console.log(`Ghost Kitchen backend alive on http://localhost:${PORT}`);
 });
