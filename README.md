@@ -1,6 +1,7 @@
 # 👻 Ghost Kitchen
 
-**Version:** 1.0.0  
+https://whaleslovesmash.github.io/ghost-kitchen-frontend/
+**Version:** 1
 **Description:**  
 *A spooky fullstack project where orders come alive with clean code and seamless live updates.*
 
