@@ -11,46 +11,38 @@ orderForm.addEventListener('submit', async (e) => {
     item: itemInput.value.trim()
   };
 
-  if (!order.name || !order.item) return;
+  await fetch('http://localhost:3000/order', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(order)
+  });
 
-  try {
-    await fetch('http://localhost:3000/order', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(order)
-    });
+  nameInput.value = '';
+  itemInput.value = '';
 
-    nameInput.value = '';
-    itemInput.value = '';
-
-    fetchOrders(); // Refresh orders after submitting
-  } catch (error) {
-    console.error('Failed to send order:', error);
-  }
+  fetchOrders(); // Refresh the list
 });
 
 async function fetchOrders() {
   try {
     const res = await fetch('http://localhost:3000/orders');
-    if (!res.ok) throw new Error('Network response was not ok');
     const orders = await res.json();
 
     orderList.innerHTML = '';
     orders.forEach(order => {
       const li = document.createElement('li');
-      li.className = 'bg-gray-800 p-3 rounded shadow hover:bg-gray-700 transition duration-200 flex justify-between items-center';
+      li.className = 'bg-gray-800 p-3 rounded shadow hover:bg-gray-700 transition duration-200 flex justify-between items-center space-x-4';
       li.innerHTML = `
-        <span>${order.item}</span>
-        <span class="text-purple-400 text-sm">${order.name}</span>
-        <span class="text-xs text-gray-400">${new Date(order.timestamp).toLocaleString()}</span>
+        <span class="flex-[3]">${order.item}</span>
+        <span class="flex-[2] text-purple-400 text-sm">${order.name}</span>
+        <span class="flex-[3] text-xs text-gray-400 text-right">${new Date(order.timestamp).toLocaleString()}</span>
       `;
       orderList.appendChild(li);
     });
-  } catch (error) {
-    console.error('Failed to load orders:', error);
-    orderList.innerHTML = '<li class="text-red-500">Failed to load orders.</li>';
+  } catch (err) {
+    console.error('Failed to load orders.', err);
   }
 }
 
 fetchOrders();
-setInterval(fetchOrders, 5000); // Refresh every 5 seconds
+setInterval(fetchOrders, 5000); // Update every 5 seconds

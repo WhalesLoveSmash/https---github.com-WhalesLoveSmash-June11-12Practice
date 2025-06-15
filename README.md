@@ -1,83 +1,42 @@
 # 👻 Ghost Kitchen
 
-**Ghost Kitchen** is a haunted multiplayer fake restaurant where you can't eat anything — but you *can* leave your cursed mark in real-time.
-
-Orders placed by one visitor are instantly visible to everyone else. It's spooky, stylish, and fully powered by a hand-written backend.
-
-No frameworks. No copy-paste. Just handcrafted fullstack web dev with max vibes.
+**Version:** 1.0.0  
+**Description:**  
+*A haunted fake restaurant where the code is scary good and orders come alive.*  
 
 ---
 
-## 🧠 What This Actually Is
+## Overview
 
-A **Tailwind + Vanilla JS frontend** paired with a custom **Node.js/Express backend**, built entirely from scratch. Visitors can:
+Ghost Kitchen is a spooky-themed fullstack Node.js project built with **Express**, **Tailwind CSS**, and vanilla JavaScript. It features a haunted restaurant vibe where users can place food orders that magically appear in a live-updating order list.
 
-- View an evolving order board updated in real time
-- Leave their name and select a ghost-themed menu item
-- Watch the interface come alive with haunted UI elements
-- Know something’s *going on* behind the scenes — a vibe that’s only possible with a backend
+The project combines a clean UI with a simple yet effective backend that stores and retrieves orders from a JSON file, showcasing a minimal but fully functional server-client app.
 
 ---
 
-## ✨ Core Features
+## Features
 
-- **Live Orders Feed**  
-  Every order placed is visible to every user — with name, dish, and timestamp.
+- **👻 Ghostly UI:**  
+  Stylish dark theme with purple accents and a blinking ghost emoji in the title for that eerie vibe. Fully responsive design that looks stunning on desktop and mobile.
 
-- **Spooky Custom API**  
-  Built with Express + JSON file storage. No database, just vibes and hand-rolled endpoints.
+- **Order Placement:**  
+  Users can submit their name and order item through a sleek form.
 
-- **Mobile-First Design**  
-  The site is fully responsive and dark-mode native, so you can haunt it from anywhere.
+- **Live Updating Orders List:**  
+  Orders are fetched and displayed dynamically, updating every 5 seconds without page reload.
 
-- **No Frameworks Allowed**  
-  Every line of code was written by hand. No React, no libraries, no generated boilerplate.
+- **Backend Storage:**  
+  Orders persist in a simple `orders.json` file managed by an Express server, with CORS enabled for local development.
 
----
-
-## 💾 Tech Stack
-
-| Layer     | Stack                           |
-|-----------|----------------------------------|
-| Frontend  | HTML, Tailwind CSS (CDN), Vanilla JS |
-| Backend   | Node.js + Express + file-based JSON storage |
-| Hosting   | GitHub Pages (frontend), Replit or similar (backend) |
+- **Alignment Magic:**  
+  Order items, customer names, and timestamps are perfectly aligned using CSS flexbox for easy readability.
 
 ---
 
-## 🧪 UX Philosophy
+## Tech Stack
 
-This project isn’t about fake functionality or simulated databases —  
-it’s about making even non-coders *feel* the backend.
-
-You see real timestamps. Real names. Real data flowing.
-
-If you're not a dev, you'll still sense that something *more* is happening — and that's the point.
-
----
-
-## 🚀 Deployment Plan
-
-- Frontend → [GitHub Pages](https://pages.github.com/)  
-- Backend → Replit / Glitch / Fly.io / custom VPS  
-- API fully separated so backend can scale or evolve later
-
----
-
-## 🪦 Future Enhancements (Maybe)
-
-- “Ghost of the Day” recognition for most orders
-- Cursed bot orders that appear at 3:00 AM
-- Expiring orders that fade away like real ghosts
-- Haunted sound effects or subtle UI jumpscares
-
----
-
-## 🛠 Dev Notes
-
-- Orders are stored in a flat JSON file (`orders.json`)  
-- POST to `/order` with `{ name, item }` to add an order  
-- GET `/orders` returns all orders, latest first  
-- Everything lives in clean files with no build step
+- **Backend:** Node.js, Express, CORS, File system (`fs`) for JSON storage  
+- **Frontend:** Vanilla JavaScript, Tailwind CSS for styling  
+- **Other:** JSON for data persistence
 
 ---
