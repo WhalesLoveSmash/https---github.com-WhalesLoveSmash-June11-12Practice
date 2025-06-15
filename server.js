@@ -1,40 +1,35 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// Store orders in memory for demo (replace with DB for prod)
-let orders = [];
+const DATA_FILE = './orders.json';
 
-// Get all orders
-app.get('/orders', (req, res) => {
-  res.json(orders);
+app.get('/', (req, res) => {
+  res.send('👻 Welcome to Ghost Kitchen backend');
 });
 
-// Receive new order
+app.get('/orders', (req, res) => {
+  const orders = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8') || '[]');
+  res.json(orders.reverse());
+});
+
 app.post('/order', (req, res) => {
-  const { name, item } = req.body;
-  if (!name || !item) {
-    return res.status(400).json({ error: 'Name and item are required.' });
-  }
-
+  const orders = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8') || '[]');
   const newOrder = {
-    id: Date.now(),
-    name,
-    item,
-    timestamp: new Date().toISOString()
+    name: req.body.name,
+    item: req.body.item,
+    timestamp: Date.now()
   };
-  orders.unshift(newOrder); // newest first
-
-  // Limit orders to last 20 for UX balance
-  if (orders.length > 20) orders.pop();
-
-  res.json({ message: 'Order received', order: newOrder });
+  orders.push(newOrder);
+  fs.writeFileSync(DATA_FILE, JSON.stringify(orders, null, 2));
+  res.status(200).json({ message: 'Order received' });
 });
 
 app.listen(PORT, () => {
-  console.log(`Ghost Kitchen backend alive on http://localhost:${PORT}`);
+  // no console logs, we're haunted now
 });
