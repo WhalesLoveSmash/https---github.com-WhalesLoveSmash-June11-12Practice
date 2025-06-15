@@ -2,41 +2,38 @@
 
 **Version:** 1.0.0  
 **Description:**  
-*A haunted fake restaurant where the code is scary good and orders come alive.*  
+*A spooky fullstack project where orders come alive with clean code and seamless live updates.*
 
 ---
 
 ## Overview
 
-Ghost Kitchen is a spooky-themed fullstack Node.js project built with **Express**, **Tailwind CSS**, and vanilla JavaScript. It features a haunted restaurant vibe where users can place food orders that magically appear in a live-updating order list.
+Ghost Kitchen is a minimalist fullstack Node.js app built with **Express**, **Tailwind CSS**, and vanilla JavaScript. It lets users place orders that instantly appear in a live-updating list, creating a fun haunted restaurant experience.
 
-The project combines a clean UI with a simple yet effective backend that stores and retrieves orders from a JSON file, showcasing a minimal but fully functional server-client app.
+The backend persists orders in a JSON file, while the frontend dynamically fetches and displays them with perfect alignment and styling.
 
 ---
 
 ## Features
 
-- **👻 Ghostly UI:**  
-  Stylish dark theme with purple accents and a blinking ghost emoji in the title for that eerie vibe. Fully responsive design that looks stunning on desktop and mobile.
+- **Live Order Submission:**  
+  Simple form for users to submit their name and order.
 
-- **Order Placement:**  
-  Users can submit their name and order item through a sleek form.
+- **Real-Time Updates:**  
+  Orders update every 5 seconds without page reload, delivering a smooth UX.
 
-- **Live Updating Orders List:**  
-  Orders are fetched and displayed dynamically, updating every 5 seconds without page reload.
+- **Persistent Storage:**  
+  Orders saved in `orders.json` managed by an Express server with CORS enabled.
 
-- **Backend Storage:**  
-  Orders persist in a simple `orders.json` file managed by an Express server, with CORS enabled for local development.
-
-- **Alignment Magic:**  
-  Order items, customer names, and timestamps are perfectly aligned using CSS flexbox for easy readability.
+- **Clean UI:**  
+  Dark theme with purple highlights and flexbox layout ensuring aligned order items, names, and timestamps.
 
 ---
 
 ## Tech Stack
 
-- **Backend:** Node.js, Express, CORS, File system (`fs`) for JSON storage  
-- **Frontend:** Vanilla JavaScript, Tailwind CSS for styling  
-- **Other:** JSON for data persistence
+- **Backend:** Node.js, Express, CORS, File system (`fs`)  
+- **Frontend:** Vanilla JavaScript, Tailwind CSS  
+- **Data:** JSON file for persistence
 
 ---
