@@ -1,80 +1,72 @@
 # 👻 Ghost Kitchen
 
-welcome to **Ghost Kitchen**, a haunted fake restaurant where you can’t eat anything but can definitely get jump scared by how good the code structure is.
+Welcome to **Ghost Kitchen**, a haunted fake restaurant where you can’t eat anything but can definitely get jump scared by how good the code structure is.
 
-specials include:
-- 🧠 *PolterGeist Pizza*
-- 💨 *Whailing Banshee Burger*
+Specials include:  
+- 🧠 *PolterGeist Pizza*  
+- 💨 *Whailing Banshee Burger*  
 - 🔪 *The Haunted Chef*
 
-this is **not** a real restaurant. this is a solo-coded project built to learn fullstack web dev with good vibes and spooky aesthetics.
+This is **not** a real restaurant. It’s a solo-coded project built to learn fullstack web development with good vibes and spooky aesthetics.
 
 ---
 
-## 🔥 what it actually is
+## 🔥 What it actually is
 
-a **JSON-powered**, mobile-first restaurant site built from scratch using:
-- no frameworks
-- no templates
-- no code I don’t fully understand
+A **JSON-powered**, mobile-first restaurant site built from scratch using:  
+- no frameworks  
+- no templates  
+- no code that isn’t fully understood
 
-everything’s written by hand. everything’s deployed through **GitHub Pages**.  
-I’m using **Tailwind via CDN** and plain JavaScript — no React, no bundlers.
-
----
-
-## ✨ mvp features (done or doing right now)
-
-- dynamic menu powered by JSON (no hardcoded items)
-- spooky theme + ghost-based specials
-- mobile-first layout with hamburger nav
-- fake order confirmation UI
-- auto dark mode (based on device theme)
-- instant GitHub Pages deploy on every push
+Everything’s written by hand and deployed through **GitHub Pages**.  
+It uses **Tailwind via CDN** and plain JavaScript — no React, no bundlers.
 
 ---
 
-## 🧠 coming soon (aka backend phase)
+## ✨ MVP Features (complete)
 
-- Node.js backend hosted on Replit or similar
-- custom API to take + store orders
-- optional Stripe integration
-- optional email confirmations
-- potentially cursed meal tracking system 👁️
-
----
-
-## 💾 tech stack
-
-| layer     | tech                              |
-|-----------|------------------------------------|
-| frontend  | HTML + Tailwind (CDN) + Vanilla JS |
-| backend   | Node.js (later)                    |
-| hosting   | GitHub Pages (frontend), Replit API |
+- Dynamic menu powered by JSON (no hardcoded items)  
+- Spooky theme + ghost-based specials  
+- Mobile-first layout with hamburger nav  
+- Fake order confirmation UI  
+- Auto dark mode (based on device theme)  
+- Instant GitHub Pages deploy on every push  
 
 ---
 
-## 🚀 deployment plan
+## 🧠 Coming soon (backend phase)
 
-- frontend → GitHub Pages (auto-updates on commit)
-- backend → Replit (or Glitch, or whatever works free)
-
----
-
-## 🧪 goal / style / vibe
-
-this project is about **actually learning** not just vibe coding  
-phase 1: barebones frontend MVP  
-phase 2: backend core logic  
-phase 3: make it actually look cool  
-
-no copy-pastes. everything handtyped.  
-UI will glow up later. right now we’re shipping skeletons.
+- Node.js backend hosted on Replit or similar  
+- Custom API to accept and store orders  
+- Optional Stripe integration  
+- Optional email confirmations  
+- Potentially cursed meal tracking system 👁️  
 
 ---
 
-## 🙃 who made this
+## 💾 Tech Stack
 
-made by [WhalesLoveSmash](https://github.com/WhalesLoveSmash)
-and no one else
-not taking orders (yet)
+| Layer     | Tech                              |  
+|-----------|----------------------------------|  
+| Frontend  | HTML + Tailwind (CDN) + Vanilla JS |  
+| Backend   | Node.js (planned)                |  
+| Hosting   | GitHub Pages (frontend), Replit API (backend) |  
+
+---
+
+## 🚀 Deployment Plan
+
+- Frontend → GitHub Pages (auto-updates on commit)  
+- Backend → Replit (or Glitch, or another free host)  
+
+---
+
+## 🧪 Goal / Style / Vibe
+
+This project is about **actually learning** — not just vibe coding.  
+Phase 1: Barebones frontend MVP (complete)  
+Phase 2: Backend core logic (in progress)  
+Phase 3: UI polish and style improvements (upcoming)  
+
+No copy-pastes. Everything handtyped.  
+UI will get a glow-up later — right now it’s a working skeleton.
